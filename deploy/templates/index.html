@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+        <title>Virtual Dr. for COVID19 Detection </title>
+        <meta name="theme-color" content="#ffffff">
+    </head>
+<body>
+    <div class="very_main">
+
+        <header>
+            <div class="top_frame">
+                <h1>Deep Learning Base COVID 19 Detectors</h1>
+            </div>
+        </header>
+
+        {% extends "base.html" %} {% block content %}
+
+        <h2>Implemented Using Deep Learning Techiques</h2>
+
+        <p class="description">
+            Choose your X-Ray of Chest visual file and click Predict to get your diagnosis.
+        </p>
+
+        <div>
+            <form id="upload-file" method="post" enctype="multipart/form-data">
+                <label for="imageUpload" class="upload-label">
+                    Select your X-Ray Chest Visual
+                </label>
+                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+            </form>
+
+            <div class="image-section" style="display:none;">
+                <div class="img-preview">
+                    <div id="imagePreview">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="upload-label" id="btn-predict">Predict!</button>
+                </div>
+            </div>
+            <div class="loader" style="display:none;"></div>
+            <h3 id="result">
+                <span> </span>
+            </h3>
+        </div>
+        <hr>
+        <div>
+            <button type="button" class="upload-label" id="btn-predict"><a href="{{url_for('news')}}">Daily News</a></button>
+            <button type="button" class="upload-label" id="btn-predict"><a href="{{url_for('chat')}}">COVID Information</a></button>
+        </div>
+        <hr>
+        <p class="final_word">
+            Project For Hackthon Submission</br>
+            Prepared by Mitali Rocks Team</a>.</br>
+        </p>
+    </div>
+    {% endblock %}
+</body>
+</html>

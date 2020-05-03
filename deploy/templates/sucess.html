@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+        <title>Virtual Dr. for COVID19 Detection </title>
+        <meta name="theme-color" content="#ffffff">
+    </head>
+<body>
+    <div class="very_main">
+
+        <header>
+            <div class="top_frame">
+                <h1>Top News of COVID from India</h1>
+            </div>
+        </header>
+
+        {% extends "base.html" %} {% block content %}
+
+        <ol>
+        <!-- For loop logic of jinja template -->
+        {%for i in range(0, 5)%}
+
+            <li>{{results[i]}}<br><a href ="{{results_link[i]}}">{{results_link[i]}}</a></li> <br>
+
+        {%endfor%}
+
+        </ol>
+        <hr>
+        <h2>Power By : <a href = "www.Newsapi.org">NEWSAPI</a></h2>
+        <hr>
+        <div>
+            <button type="button" class="upload-label" id="btn-predict"><a href="{{url_for('chat')}}">COVID CHATBOT</a></button>
+            <button type="button" class="upload-label" id="btn-predict"><a href="/">Home</a></button>
+        </div>
+        <hr>
+        <p class="final_word">
+            Project For Hackthon Submission</br>
+            Prepared by Mitali Rocks Team</a>.</br>
+        </p>
+    </div>
+    {% endblock %}
+</body>
+</html>

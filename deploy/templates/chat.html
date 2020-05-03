@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+        <title>Virtual Dr. for COVID19 Detection </title>
+        <meta name="theme-color" content="#ffffff">
+    </head>
+<body>
+    <div class="very_main">
+
+        <header>
+            <div class="top_frame">
+                <h1>COVID Chatbot</h1>
+            </div>
+        </header>
+
+        {% extends "base.html" %} {% block content %}
+
+        <div>
+      <div id="chatbox">
+        <p class="botText"><span>Hi! I'm COVID Chatbot, I am help to get information about COVID.</span></p>
+      </div>
+            <iframe
+    allow="microphone;"
+    width="450"
+    height="600"
+    src="https://console.dialogflow.com/api-client/demo/embedded/bd318300-4d4a-41cc-bb98-703cea073f99">
+</iframe>
+        <hr>
+        <div>
+            <button type="button" class="upload-label" id="btn-predict"><a href="{{url_for('news')}}">Daily News</a></button>
+            <button type="button" class="upload-label" id="btn-predict"><a href="{{url_for('chat')}}">Home</a></button>
+        </div>
+        <hr>
+        <p class="final_word">
+            Project For Hackthon Submission</br>
+            Prepared by Mitali Rocks Team</a>.</br>
+        </p>
+    </div>
+    {% endblock %}
+</body>
+</html>
