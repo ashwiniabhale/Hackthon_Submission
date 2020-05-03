@@ -84,7 +84,7 @@ def upload():
 
 @app.route("/news", methods=['GET', 'POST'])
 def news():
-	main_url = "http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=dbf949d1eea745a6a83a4d45c6206404"
+	main_url = "http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=dbf949d1eea745a6a83a4d45c62064*4**"
 
 	# fetching data in json format
 	open_bbc_page = requests.get(main_url).json()
